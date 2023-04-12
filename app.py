@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, render_template
 import numpy as np
 import pandas as pd
@@ -32,7 +33,7 @@ def predict():
             writing_score=float(request.form.get('reading_score'))
 
         )
-        pred_df=data.get_data_as_data_frame()
+        pred_df=data.get_data_frame()
         print(pred_df)
         print("Before Prediction")
 

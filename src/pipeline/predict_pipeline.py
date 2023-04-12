@@ -1,4 +1,5 @@
 import sys
+import os
 import pandas as pd
 from src.exception import CustomException
 from src.logger import logging
@@ -12,7 +13,7 @@ class PredictPipeline:
     def predict(self,features):
         try:
             model_path=os.path.join("artifacts","model.pkl")
-            transformer_path=os.path.join('artifacts','transformer.pkl')
+            transformer_path=os.path.join('artifacts','tranformer.pkl')
             print("Before Loading")
             model=load_object(file_path=model_path)
             transformer=load_object(file_path=transformer_path)
